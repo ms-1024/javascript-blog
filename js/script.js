@@ -1,5 +1,7 @@
 'use strict';
 
+// Chapter 5.2
+
 function titleClickHandler(event){
   console.log('Link was clicked!');
   console.log(event);
@@ -36,8 +38,49 @@ function titleClickHandler(event){
   targetArticle.classList.add('active');
   }
 
-const links = document.querySelectorAll('.titles a');
+// Chapter 5.4
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+const titleList = document.querySelector(optTitleListSelector);
+
+function generateTitleLinks(){
+
+  /* remove contents of titleList */
+  titleList.innerHTML = '';
+
+  /* for each article */
+  const articles = document.querySelectorAll(optArticleSelector);
+  let html = '';
+  for (let article of articles){
+
+    /* get the article id */
+    const articleId = article.getAttribute('id');
+
+    /* find the title element */
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+    /* get the title from the title element */
+    const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
+    console.log(linkHTML);
+
+    /* create HTML of the link */
+    titleList.insertAdjacentHTML('beforeend', linkHTML);
+
+    /* insert link into titleList */
+    html = html + linkHTML;
+    console.log(html);
+  }
+
+  titleList.innerHTML = html;
+  const links = document.querySelectorAll('.titles a');
+  console.log(links);
+
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
 }
+
+generateTitleLinks();
