@@ -36,7 +36,7 @@ function titleClickHandler(event){
 
   /* [DONE] add class 'active' to the correct article */
   targetArticle.classList.add('active');
-  }
+}
 
 // Chapter 5.4
 
