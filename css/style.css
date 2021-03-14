@@ -104,4 +104,34 @@ body {
   margin: 0 10px 0 0;
 }
 
+.tag-size-1 {
+  font-size: 80%;
+  color: #1737da;
+}
+
+.tag-size-2 {
+  font-size: 100%;
+  color: #58c61d;
+}
+
+.tag-size-3 {
+  font-size: 150%;
+  color: #f2dc08;
+}
+
+.tag-size-4 {
+  font-size: 200%;
+  color: #c308ae;
+}
+
+.tag-size-5 {
+  font-size: 250%;
+  color: #d40101;
+}
+
+.tags li {
+  display: inline-block;
+  padding: 0 5px 0 0;
+}
+
 /*# sourceMappingURL=style.css.map */
